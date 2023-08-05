@@ -1,0 +1,75 @@
+@use "variables" as var;
+
+@mixin btn($padding: 18px 32px) {
+  padding: $padding;
+  border-radius: 27px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  text-transform: capitalize;
+  -webkit-border-radius: 27px;
+  -moz-border-radius: 27px;
+  -ms-border-radius: 27px;
+  -o-border-radius: 27px;
+}
+
+@mixin primary-btn($padding) {
+  @include btn($padding);
+  background-color: var.$btn-color;
+  color: $white;
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+@mixin secondary-btn {
+  @include btn;
+  background-color: rgba(245, 138, 7, 0.10);
+  color:#F58A07;
+  &:hover {
+    background-color: #DCEAF5; 
+    color: var.$white;
+  }
+}
+
+@mixin nav-btn {
+  @include btn($padding);
+  background-color: var.$btn-color;
+  color: $white;
+  &:hover {
+    background-color: var.$btn-color;
+    color: var.$white;
+  }
+}
+
+@mixin title($weight, $size, $height, $color: var.$black) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin title-1 {
+  @include title(700, var.$h1, 72px, var.$main_text_color);
+}
+
+@mixin title-2 {
+  @include title(700, var.$h2, 56px);
+}
+
+@mixin title-3 {
+  @include title(700, var.$h3, 50px);
+}
+
+@mixin title-4 {
+  @include title(700, var.$h4, 41px);
+}
+
+@mixin title-5 {
+  @include title(700, var.$h5, 30px);
+}
+
+@mixin title-6 {
+  @include title(400, var.$h6, normal);
+}
